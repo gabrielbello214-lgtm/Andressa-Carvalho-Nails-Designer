@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andressa Carvalho Nails Designer | Agendamento Online</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <nav>
+      <h1>Andressa Carvalho Nails Designer</h1>
+
+      <div class="nav-links">
+        <a href="#galeria">Trabalhos</a>
+        <a href="#agendamento">Agendar</a>
+
+        <button id="btnAbrirLogin" class="btn-login" onclick="abrirModalLogin()">Login</button>
+
+        <div class="usuario-logado" id="usuarioLogado">
+          <span id="nomeUsuario"></span>
+          <button onclick="sairConta()">Sair</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <span>Unhas de pé e mão</span>
+      <h2>Unhas impecáveis que elevam sua autoestima</h2>
+      <p>Atendimento profissional, cuidado em cada detalhe e agendamento online simples e rápido.</p>
+
+      <div class="hero-buttons">
+        <button class="btn" onclick="abrirModalCadastro()">Agendar agora</button>
+        <a href="#galeria" class="btn btn-outline">Ver trabalhos</a>
+      </div>
+    </div>
+
+    <div class="perfil-foto">
+      <img src="img/andressa.png" alt="Andressa Carvalho Nails Designer">
+    </div>
+  </section>
+
+  <section id="galeria" class="galeria">
+    <span class="section-tag">Portfólio</span>
+    <h2>Trabalhos recentes</h2>
+    <p class="section-description">Alguns resultados para inspirar seu próximo agendamento.</p>
+
+    <div class="grid">
+      <div class="foto"><img src="img/img1.png" alt="Unha decorada"></div>
+      <div class="foto"><img src="img/img2.png" alt="Esmaltação profissional"></div>
+      <div class="foto"><img src="img/img3.png" alt="Alongamento de unhas"></div>
+      <div class="foto"><img src="img/img4.png" alt="Design de unhas premium"></div>
+    </div>
+  </section>
+
+  <section id="agendamento" class="agendamento">
+    <span class="section-tag">Agenda online</span>
+    <h2>Agende seu horário</h2>
+    <p class="section-description">Clique no botão abaixo para criar seu cadastro e marcar seu horário.</p>
+    <button class="btn-agendar" onclick="abrirModalCadastro()">Cadastrar e agendar</button>
+  </section>
+
+  <section id="meuAgendamento" class="meu-agendamento">
+    <span class="section-tag">Minha agenda</span>
+    <h2>Meu agendamento</h2>
+    <p class="section-description">Após o login, seu horário aparecerá aqui.</p>
+    <div id="dadosCliente"></div>
+  </section>
+
+  <div class="modal-login" id="modalLogin">
+    <div class="modal-box">
+      <button class="fechar" onclick="fecharModalLogin()">×</button>
+
+      <h2>Bem-vinda</h2>
+      <p>Acesse sua conta ou crie seu agendamento.</p>
+
+      <div class="tabs">
+        <button id="tabLogin" class="ativo" onclick="mostrarLogin()">Entrar</button>
+        <button id="tabCadastro" onclick="mostrarCadastro()">Cadastrar</button>
+      </div>
+
+      <form id="formLogin" class="form-modal">
+        <input type="email" id="loginEmail" placeholder="Seu email" required />
+        <input type="password" id="loginSenha" placeholder="Sua senha" required />
+        <button type="submit">Entrar</button>
+        <div id="mensagemLogin"></div>
+      </form>
+
+      <form id="formAgendamento" class="form-modal escondido">
+        <input type="text" id="nome" placeholder="Seu nome" required />
+        <input type="email" id="email" placeholder="Seu email" required />
+        <input type="password" id="senha" placeholder="Crie uma senha" required />
+
+        <select id="servico" required>
+          <option value="">Escolha o serviço</option>
+          <option value="Mão">Mão</option>
+          <option value="Pé">Pé</option>
+          <option value="Mão e Pé">Mão e Pé</option>
+          <option value="Alongamento">Alongamento</option>
+        </select>
+
+        <input type="date" id="data" required />
+
+        <select id="horario" required>
+          <option value="">Escolha o horário</option>
+          <option value="09:00">09:00</option>
+          <option value="10:00">10:00</option>
+          <option value="11:00">11:00</option>
+          <option value="14:00">14:00</option>
+          <option value="15:00">15:00</option>
+          <option value="16:00">16:00</option>
+        </select>
+
+        <button type="submit">Cadastrar e agendar</button>
+        <div id="mensagem"></div>
+      </form>
+    </div>
+  </div>
+
+  <a href="https://wa.me/5511959423848" class="whatsapp" target="_blank">💬</a>
+
+  <footer>
+    <p>Andressa Carvalho Nails Designer | Protótipo por Gabriel</p>
+  </footer>
+
+  <script src="javascript.js" defer></script>
+</body>
+</html>
